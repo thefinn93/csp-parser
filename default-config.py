@@ -1,1 +1,1 @@
-DATABASE = "csp.db"
+DATABASE = "sqlite:///csp.db"

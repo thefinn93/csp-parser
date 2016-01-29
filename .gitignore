@@ -60,3 +60,6 @@ target/
 
 # Config
 config.py
+
+# DB
+*.db
