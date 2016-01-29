@@ -63,3 +63,4 @@ config.py
 
 # DB
 *.db
+static/

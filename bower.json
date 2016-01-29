@@ -1,0 +1,23 @@
+{
+  "name": "csp-parser",
+  "authors": [
+    "Finn <finn@finn.io>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "GPLv3",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "milligram": "~1.0.3"
+  }
+}
