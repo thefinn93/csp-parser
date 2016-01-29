@@ -6,21 +6,10 @@
 </head>
 <body>
   <h1>CSP Reports</h1>
-  <table border="1">
-    {% for report in reports %}
-    {% if loop.first %}
-    <tr>
-      {% for key, value in report.iteritems() %}
-      <th><b>{{ key }}</th>
-      {% endfor %}
-    </tr>
-    {% endif %}
-    <tr>
-      {% for key, value in report.iteritems() %}
-      <td><code>{{ value }}</code></td>
-      {% endfor %}
-    </tr>
-    {% endfor %}
-  </table>
+  <ul>
+  {% for domain in domains %}
+  <li /><a href="{{ url_for('domain_report', domain=domain['domain'])}}">{{ domain['domain'] }}</a>
+  {% endfor %}
+  </ul>
 </body>
 </html>
