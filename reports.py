@@ -2,6 +2,8 @@
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 
+app.config.from_pyfile('config.py', silent=True)
+
 
 @app.route("/")
 def hello():
