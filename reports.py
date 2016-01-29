@@ -13,7 +13,7 @@ def hello():
 @app.route("/csp", methods=["POST"])
 def csp():
     data = request.get_json()
-    app.logger.info('Got some JSON! %s', data)
+    app.logger.warning('Got some JSON! %s', data)
     return jsonify({"success": True})
 
 if __name__ == "__main__":
