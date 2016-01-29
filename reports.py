@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config.from_pyfile('config.py', silent=True)
 
 handler = RotatingFileHandler('csp.log', maxBytes=10000, backupCount=1)
-handler.setLevel(logging.INFO)
+handler.setLevel(logging.DEBUG)
 app.logger.addHandler(handler)
 
 
@@ -20,6 +20,7 @@ def hello():
 @app.route("/csp", methods=["POST"])
 def csp():
     data = request.get_json()
+    app.logger.info("Got a CSP report!")
     app.logger.info(json.dumps(data))
     return jsonify({"success": True})
 
