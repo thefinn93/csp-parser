@@ -19,10 +19,9 @@ def hello():
 
 @app.route("/csp", methods=["POST"])
 def csp():
-    data = request.get_json()
-    app.logger.info("Got a CSP report!")
+    data = json.loads(request.data)
     app.logger.info(json.dumps(data))
-    return jsonify({"success": True})
+    return jsonify({"success": True, "data": data})
 
 if __name__ == "__main__":
     app.run()
