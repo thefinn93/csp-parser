@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import json
 import dataset
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 app.config.from_pyfile('default-config.py')
@@ -13,7 +13,7 @@ reports = db['reports']
 
 @app.route("/")
 def hello():
-    return jsonify(reports.find())
+    return render_template('index.html', reports=reports.find())
 
 
 @app.route("/csp", methods=["POST"])

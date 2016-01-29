@@ -1,0 +1,21 @@
+<html>
+<body>
+  <h1>CSP Reports</h1>
+  <table>
+    {% for report in reports %}
+    {% if loop.first %}
+    <tr>
+      {% for key, value in report.iteritems() %}
+      <th><b>{{ key }}</th>
+      {% endfor %}
+    </tr>
+    {% endif %}
+    <tr>
+      {% for key, value in report.iteritems() %}
+      <td><code>{{ value }}</code></td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
