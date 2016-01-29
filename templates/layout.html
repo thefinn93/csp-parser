@@ -1,0 +1,10 @@
+<html>
+<head>
+  <title>{% block title %}{% endblock %} | CSP Reports</title>
+  <link href="{{ url_for('static', filename='vendor/normalize.css/normalize.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='vendor/milligram/dist/milligram.min.css') }}" rel="stylesheet" />
+</head>
+<body>
+{% block body %}{% endblock %}
+</body>
+</html>

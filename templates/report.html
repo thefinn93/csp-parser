@@ -1,10 +1,6 @@
-<html>
-<head>
-  <title>CSP Violations</title>
-  <link href="{{ url_for('static', filename='vendor/normalize.css/normalize.css') }}" rel="stylesheet" />
-  <link href="{{ url_for('static', filename='vendor/milligram/dist/milligram.min.css') }}" rel="stylesheet" />
-</head>
-<body>
+{% extends 'layout.html' %}
+{% block title %}Violations for {{ domain }}{% endblock %}
+{% block body %}
   <h1>CSP Reports</h1>
   <table border="1">
     {% for report in reports %}
@@ -22,5 +18,4 @@
     </tr>
     {% endfor %}
   </table>
-</body>
-</html>
+{% endblock %}

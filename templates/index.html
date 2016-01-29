@@ -1,15 +1,12 @@
-<html>
-<head>
-  <title>CSP Violations</title>
-  <link href="{{ url_for('static', filename='vendor/normalize.css/normalize.css') }}" rel="stylesheet" />
-  <link href="{{ url_for('static', filename='vendor/milligram/dist/milligram.min.css') }}" rel="stylesheet" />
-</head>
-<body>
+{% extends 'layout.html' %}
+{% block title %}Domain List{% endblock %}
+{% block body %}
+<div class="container">
   <h1>CSP Reports</h1>
   <ul>
   {% for domain in domains %}
   <li /><a href="{{ url_for('domain_report', domain=domain['domain'])}}">{{ domain['domain'] }}</a>
   {% endfor %}
   </ul>
-</body>
-</html>
+</div>
+{% endblock %}
