@@ -2,6 +2,7 @@
 import json
 import dataset
 from flask import Flask, request, jsonify, render_template
+from urlparse import urlparse
 
 app = Flask(__name__)
 app.config.from_pyfile('default-config.py')
@@ -22,6 +23,13 @@ def csp():
         row = dict()
         for key in data:
             row[key.replace("-", "_")] = data[key]
+        if "document-uri" in data:
+            url = urlparse(data['document-uri'])
+            if url.scheme != "view-source":
+                row['domain'] = url.netloc
+            else:
+                url = urlparse(url.path)
+                row['domain'] = url.netloc
         db['reports'].insert(row)
         return jsonify({"success": True})
     except KeyboardInterrupt:
