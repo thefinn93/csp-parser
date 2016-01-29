@@ -17,9 +17,16 @@ def hello():
 
 @app.route("/csp", methods=["POST"])
 def csp():
-    row = dict(json.loads(request.data)['csp-report'])
-    db['reports'].insert(row)
-    return jsonify({"success": True})
+    try:
+        data = json.loads(request.data)['csp-report']
+        row = dict()
+        for key in data:
+            row[key.replace("-", "_")] = data[key]
+        db['reports'].insert(row)
+        return jsonify({"success": True})
+    except KeyboardInterrupt:
+        return(jsonify({"success": False, "data": request.data}))
+
 
 if __name__ == "__main__":
     app.run()
