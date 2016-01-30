@@ -1,7 +1,8 @@
 {% extends 'layout.html' %}
 {% block title %}Violations for {{ domain }}{% endblock %}
 {% block body %}
-  <h1>CSP Reports</h1>
+  <h1>CSP Reports for {{ domain }}</h1>
+  <small>[<a href="{{ url_for('index') }}">home</a>]</small>
   <table border="1">
     {% for report in reports %}
     {% if loop.first %}
