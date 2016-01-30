@@ -3,7 +3,7 @@
 {% block body %}
   <h1>CSP Reports for {{ domain }}</h1>
   <small>[<a href="{{ url_for('index') }}">home</a>]</small><br />
-  <table border="1">
+  <table>
     {% for report in reports %}
     {% if loop.first %}
     <thead>
