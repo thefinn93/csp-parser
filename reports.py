@@ -18,7 +18,7 @@ def index():
 
 @app.route("/<domain>")
 def domain_report(domain):
-    return render_template('report.html', reports=db['reports'].find(domain=domain))
+    return render_template('report.html', reports=db['reports'].find(domain=domain), domain=domain)
 
 
 @app.route("/csp", methods=["POST"])
