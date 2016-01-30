@@ -6,11 +6,13 @@
   <table border="1">
     {% for report in reports %}
     {% if loop.first %}
-    <tr>
-      {% for key, value in report.iteritems() %}
-      <th><b>{{ key }}</th>
-      {% endfor %}
-    </tr>
+    <thead>
+      <tr>
+        {% for key, value in report.iteritems() %}
+        <th><b>{{ key }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
     {% endif %}
     <tr>
       {% for key, value in report.iteritems() %}
